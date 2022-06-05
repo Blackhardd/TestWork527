@@ -1,0 +1,376 @@
+/*
+Theme Name: Blackhardd
+Author: Alexander Piskun
+Author URI: https://instagram.com/lovu_volnu/
+Description: The theme was created to completion test assignment.
+Version: 1.0
+Requires at least: 5.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bdd
+*/
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+/**
+ *  Setting fonts
+ */
+
+body,
+input,
+button,
+textarea {
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+
+/**
+ *  Variables
+ */
+
+:root {
+    --bdd-primary: #0066FF;
+    --bdd-secondary: #00327D;
+    --bdd-tertiary: #FFB800;
+    --bdd-border-grey: #CCD4DA;
+    --bdd-success: yellowgreen;
+    --bdd-error: orangered;
+}
+
+
+/**
+ *  Grid
+ */
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+/**
+ *  Site Header
+ */
+
+.site-header {
+    height: 56px;
+    color: #FFFFFF;
+    background-color: var(--bdd-secondary);
+}
+
+.site-header > .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+
+/**
+ *  Site Logo
+ */
+
+.site-logo {
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+
+/**
+ *  Site Navigation
+ */
+
+.site-navigation {
+    margin-left: auto;
+}
+
+.site-navigation .menu a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+
+.site-navigation .menu a:hover {
+    color: #cccccc;
+}
+
+.site-navigation .menu .current-menu-item > a {
+    color: var(--bdd-tertiary);
+}
+
+.site-navigation .menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.site-navigation .menu > li {
+    margin: 0 8px;
+}
+
+
+/**
+ *  Form
+ */
+
+.form > fieldset {
+    min-width: unset;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.form__response {
+    display: none;
+    margin-top: 16px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+.form__actions {
+    margin-top: 32px;
+}
+
+.form--success .form__response {
+    display: block;
+    border-color: var(--bdd-success);
+}
+
+.form--failure .form__response {
+    display: block;
+    border-color: var(--bdd-error);
+}
+
+#form-create-product {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+
+/**
+ *  Form Row
+ */
+
+.form-row:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.form-row {
+    display: flex;
+    margin: 0 -8px;
+}
+
+.form-row > .form-col {
+    padding: 0 8px;
+}
+
+.form-row--one > .form-col {
+    width: 100%;
+}
+
+.form-row--two > .form-col {
+    width: 50%;
+}
+
+
+/**
+ *  Inputs
+ */
+
+.input > label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.input__wrap input,
+.input__wrap select {
+    display: block;
+    width: 100%;
+    height: 48px;
+    padding: 11px 16px;
+    font-size: 14px;
+    line-height: 24px;
+    border-radius: 4px;
+    border: 1px solid var(--bdd-border-grey);
+    transition: border-color 100ms ease, box-shadow 100ms ease;
+}
+
+.input__wrap input::placeholder {
+    color: #999999;
+}
+
+.input__wrap input:focus,
+.input__wrap select:focus {
+    border-color: var(--bdd-primary);
+    box-shadow: 0px 0px 8px rgba(0, 102, 255, 0.2);
+    outline: none;
+}
+
+.input--not-valid .input__wrap input,
+.input--not-valid .input__wrap select {
+    border-color: var(--bdd-error);
+}
+
+
+/**
+ *  Input Error
+ */
+
+.input-error {
+    margin-top: 2px;
+    color: var(--bdd-error);
+    font-size: 14px;
+    line-height: 18px;
+}
+
+
+/**
+ *  Buttons
+ */
+
+.btn {
+    display: inline-flex;
+    padding: 16px 24px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: none;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn--default {
+    background-color: var(--bdd-primary);
+}
+
+.btn--outline {
+    color: var(--bdd-primary);
+    border: 2px solid var(--bdd-primary);
+}
+
+.btn--outline:hover {
+    color: #FFFFFF;
+    background-color: var(--bdd-primary);
+}
+
+
+/**
+ *  Page Header
+ */
+
+.page-header {
+    padding: 32px 0;
+    background: #f3f3f3;
+}
+
+
+/**
+ *  Page Title
+ */
+
+.page-title {
+    margin: 0;
+    font-size: 24px;
+}
+
+
+/**
+ *  Page Content
+ */
+
+.page-content {
+    padding: 64px 0;
+}
+
+
+/**
+ *  Products Grid
+ */
+
+.products-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0;
+    padding: 0;
+}
+
+.products-grid > .product {
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+
+
+/**
+ *  Product
+ */
+
+.product {
+    padding: 16px;
+    border: 1px solid #f3f3f3;
+}
+
+.product > .woocommerce-loop-product__link {
+    display: block;
+    padding-bottom: 24px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.product > .woocommerce-loop-product__link > img {
+    display: block;
+}
+
+.product > .woocommerce-loop-product__link > .price {
+    font-size: 20px;
+}
+
+.product .woocommerce-loop-product__title {
+    margin: 16px 0 16px;
+    font-size: 16px;
+}
+
+.product > .btn {}
+
+
+/**
+ *  Media Queries
+ */
+
+@media screen and (max-width: 560px) {
+    .site-header {
+        height: unset;
+    }
+
+    .site-header > .container {
+        flex-direction: column;
+        padding: 16px 0;
+    }
+
+    .site-navigation {
+        margin-top: 16px;
+        margin-left: unset;
+    }
+}
